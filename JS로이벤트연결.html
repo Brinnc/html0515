@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS로이벤트연결</title>
+    <script>
+        //실행부가 아래 함수 블럭을 만나면, 실행하는 것이 아니라, 함수 블럭을 메모리에 로드함.
+        //개발자가 호출할 때만 실행됨.
+        //따라서, 함수 안에 있는 코드인 document.getElementById("pic");는
+        //프로그램 가동과 동시에 실행되지 않기때문에 에러가 발생하지 않음.
+        //즉, 실행을 보류한 것임.(막은 것)
+        function addEvent() {
+            //문서 내의 pic이라 불리는 요소에 클릭 이벤트 연결
+            let pic = document.getElementById("pic");
+            //pic에 이벤트 연결
+            pic.addEventListener("click", function () {
+                alert("뿅");
+            }); 
+
+            //이미지에 마우스 올려놓았을 때 메세지 출력
+            pic.addEventListener("mouseover", function () {
+                alert('마우스 올려?');
+            });
+
+            //이미지에 마우스 내려놓았을 때 메세지 출력
+            pic.addEventListener("mouseout", function () {
+                alert('마우스 내려?');
+            });
+
+            //select 박스에 대한 이벤트 연결, 선택 바꿀때 메세지 출력
+            let sel=document.getElementById("sel");
+            sel.addEventListener("change", function () {
+                alert('바꿈?');
+            });
+
+
+        }
+    </script>
+</head>
+<!--문서가 로드되었을 때 이벤트 처리가 이루어짐-->
+
+<body onLoad="addEvent()">
+
+    <img src="../images/Biplane_HD.png" id="pic"> <!--onclick과 동일한 효과를 js에서 준것-->
+
+    <select id="sel">
+        <option value="사과">사과</option>
+        <option value="딸기">딸기</option>
+        <option value="포도">포도</option>
+    </select>
+
+</body>
+
+</html>

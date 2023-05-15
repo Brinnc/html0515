@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트의유형</title>
+</head>
+<body onLoad="alert('문서가 모두 로드됨.')">
+    <!--
+        Event란? 현실에서의 사건, 사고를 의미함.
+        하지만 전산에서는 현재 프로그램 영역 내에서 발생하는 이벤트로 한정함.
+        ex) 웹브라우저에서 발생하는 사건사고
+        -클릭할때: click 이벤트 | onClick (핸들러)
+        -더블클릭할때: dblclick | on
+        -마우스 올려놓을때: mouseover
+        -마우스 내려놓을때: mouseout
+        -커서올려놓을때: focus
+        -커서내려놓을때: blur
+        -문서 로드될때: load
+        -선택을 바꿀때, 혹은 값을 바꿀때: change
+
+    -->
+    
+    <button onMouseOver="alert('마우스올렸어?')">마우스올려놓으면</button>
+    <button onMouseOut="alert('마우스내렸어?')">마우스내려놓으면</button>
+
+    <input type="text" onFocus="alert('커서올렸어?')" placeholder="여기에 커서를 올려봐라">
+    <input type="text" onBlur="alert('커서내렸어?')" onChange="alert('바꿨어?')">
+
+    <select onChange="alert('변경했어?')">
+        <option value="사과">사과</option>
+        <option value="딸기">딸기</option>
+        <option value="바나나">바나나</option>
+    </select>
+
+</body>
+</html>
